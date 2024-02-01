@@ -1,0 +1,92 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/* Core CSS required for Ionic components to work properly */
+@import '~@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+// :root {
+//   --ion-color-rose: #221f20;
+//   --ion-color-rose-rgb: rgb(34, 31, 32);
+//   --ion-color-rose-contrast: #ffffff;
+//   --ion-color-rose-contrast-rgb: rgb(34, 31, 32);
+//   --ion-color-rose-shade: #1a1718;
+//   --ion-color-rose-tint: #363133;
+
+//   --ion-text-color: #221f20;
+//   --ion-text-color-rgb: rgb(34, 31, 32);;
+
+//   --ion-color-step-50: #fdf7f7;
+//   --ion-color-step-100: #eee3e3;
+//   --ion-color-step-150: #e4d7d7;
+//   --ion-color-step-200: #d4c8c8;
+//   --ion-color-step-250: #c7bbbb;
+//   --ion-color-step-300: #b3a8a8;
+//   --ion-color-step-350: #a39999;
+//   --ion-color-step-400: #968c8c;
+//   --ion-color-step-450: #887f7f;
+//   --ion-color-step-500: #7a7272;
+//   --ion-color-step-550: #6b6363;
+//   --ion-color-step-600: #5c5555;
+//   --ion-color-step-650: #575151;
+//   --ion-color-step-700: #4d4747;
+//   --ion-color-step-750: #423d3d;
+//   --ion-color-step-800: #383434;
+//   --ion-color-step-850: #2e2b2b;
+//   --ion-color-step-900: #222020;
+//   --ion-color-step-950: #1a1718;
+// }
+
+// .ion-color-rose {
+//   --ion-color-base: var(--ion-color-rose);
+//   --ion-color-base-rgb: var(--ion-color-rose-rgb);
+//   --ion-color-contrast: var(--ion-color-rose-contrast);
+//   --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
+//   --ion-color-shade: var(--ion-color-rose-shade);
+//   --ion-color-tint: var(--ion-color-rose-tint);
+// }
+
+ion-datetime {
+  --background: #bebdbd;
+  --background-rgb: rgb(190, 189, 189);
+
+  border-radius: 16px;
+  box-shadow: rgba(#3f3c3c, 0.3) 0px 10px 15px -3px;
+}
+

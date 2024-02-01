@@ -1,0 +1,4 @@
+# pack-refs with: peeled fully-peeled sorted 
+4db4ca04734a999c39f4916f9533ac7dae8c33ce refs/remotes/origin/Rosario/actualizacion-dependencias
+d489ef2f28093abf777e17c3bdcdb8546737a2f0 refs/remotes/origin/Rosario/http-client-capacitor
+d3c9caee00c099b325b31ab0a00d8c93bae21af1 refs/remotes/origin/dev

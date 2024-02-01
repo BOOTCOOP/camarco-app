@@ -1,0 +1,291 @@
+$actividad:  #c00000;
+$costos:     #ed8260;
+$insumos:    #00b5cb;
+$permisos:   #f8ae57;
+$dark-grey:  #343434;
+$light-grey: #999999;
+$very-light-grey: #dcdcdc;
+    
+
+.scroll-content {
+    padding-bottom: 20px;
+}
+
+ion-grid {
+    padding: 0;
+}
+
+ion-row {
+    padding: 0 5px;
+}
+
+.ion-header::after {
+        background-image: none !important;
+        border: none !important;
+    }
+
+h2 {
+    font-family: 'RobotoCondensed';
+    font-size: 160%;
+    text-align: left;
+    margin-bottom: 0;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.indicator-detail-header {
+    position: relative;
+    font-family: 'RobotoCondensed';
+    padding: 10px 0;
+    color: white;
+   
+    .indicator-details-info {
+        right: 5%;
+        position: absolute;
+        color: black;
+        font-size: 150%;
+        bottom: -18px;
+    }
+    
+}
+
+.indicator-date-selector {
+    text-transform: bold;
+    font-size: 130%;
+    text-transform: capitalize;
+}
+
+p {
+    margin: 0;
+}
+
+.title-value {
+    font-size: 350%;
+    line-height: 70%;
+}
+
+.unit{
+    font-size: 200%;
+}
+.indicator-variaciones{
+    ion-col {
+        margin-top: 10px;
+        font-family: 'RobotoCondensed';
+        border-right: 1px solid white;
+        padding: 0;
+        margin: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    ion-col:first-child {
+        padding-left: 0;
+    }
+    ion-col:last-child {
+        border: none;
+    }
+    p {
+        font-size: 115%;
+    }
+    p.title {
+        font-size: 80%;
+    }
+}
+
+.segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    color: black;
+}
+
+.segment-md .segment-button {
+    color: $dark-grey;
+    border-color: $dark-grey;
+}
+
+.indicator-grid {
+    overflow: scroll;
+    .indicator-table {
+        min-width: 300px;
+    }
+    .indicator-description p {
+        margin: 6px 0;
+        color: $dark-grey;
+    }
+    .table-head {
+        font-size: 80%;
+        font-weight: bold;
+        text-align: center;
+        ion-col {
+        width: 250px;
+        border: 1px solid black;
+        }
+    }
+    .table-data {
+        font-size: 70%;
+        text-align: center;
+    }
+}
+
+.extra-title {
+    th:nth-child(even)  {
+        background-color: rgba(211, 211, 211, 0.56);
+    }
+
+    th:nth-child(odd) {
+        background-color: white;
+    }
+}
+
+.table-salarios {
+    padding-bottom: 10px;
+    overflow: auto;
+    tr:nth-child(even) td {
+        background-color: rgba(211, 211, 211, 0.56);
+    }
+
+    tr:nth-child(odd) td {
+        background-color: white;
+    }
+    th, td {
+        border: 1px solid $very-light-grey;
+    }
+}
+
+.detail-table {
+    text-align: center;
+    width: 100%;
+
+    th {
+        font-size: 90%;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+    }
+    td.data {
+        font-weight: bold;
+    }
+    th.data {
+        font-weight: normal;
+        border: none;
+        }
+    td {
+        color: grey;
+        font-size: 80%;
+        padding: 5px;
+        }
+}
+
+.title-description {
+    font-family: 'RobotoCondensed';
+    color: $light-grey;
+    font-size: 70%;
+    p {
+        margin: 0;
+    }
+    ion-col {
+            padding-top: 0;
+    }
+}
+
+.table-wrapper {
+    overflow-x:scroll;
+    overflow-y:visible;
+    padding: 10px 0px 10px 95px;
+    position: relative;
+
+    td, th {
+        padding: 5px 10px;
+    }
+
+    .fixed-col {
+        position: absolute;
+        left: 5px;
+        width: 90px;
+        z-index: 999;
+    }
+    tr:nth-child(even) td {
+        background-color: rgba(211, 211, 211, 0.56);
+    }
+
+    tr:nth-child(odd) td {
+        background-color: white;
+    }
+
+}
+
+.background-actividad {
+    background-color: $actividad;
+}
+
+.background-costos {
+    background-color: $costos;
+}
+
+.background-insumos {
+    background-color: $insumos;
+}
+
+.background-permisos {
+    background-color: $permisos;
+}
+ion-segment.segment-text-color .background-actividad{
+    background-color: #2c2c2c;
+    color: #ffffff;
+  }
+
+ion-segment.segment-text-color .background-costos{
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+ion-segment.segment-text-color .background-insumos{
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+
+ion-segment.segment-text-color .background-permisos{
+    background-color: #2c2c2c;
+    color: #ffffff;
+}
+    
+// }
+
+.actividad{
+    color: $actividad;
+}
+.costos{
+    color:$costos;
+}
+.insumos{
+    color:$insumos;
+}
+.permisos{
+    color:$permisos;
+}
+.dark-grey{
+    color:$dark-grey
+}
+.ligth-grey{
+    color:$light-grey
+}
+.very-ligth-grey{
+    color:$very-light-grey;
+}
+
+.white-background{
+    background-color:#FFFFFF;
+}
+
+.title-table{
+    color:#343434;
+}
+
+
+
+.title-color{
+    color: #FFFFFF;
+}
+
+.calendar-bg{
+    background-color: #FFFFFF;
+    color: black !important;
+}
+

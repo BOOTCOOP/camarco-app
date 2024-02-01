@@ -1,0 +1,40 @@
+.close-button {
+    color: white;
+}
+.toolbar-title {
+    color: white;    
+}
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.login-modal {
+    font-size: 16px;
+    .title {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    input {
+        display: block;
+        width: 60%;
+        min-width: 180px;
+        max-width: 1800px;
+    }
+    .button {
+        margin-top: 10px;
+    }
+    .btn-submit {
+        background-color: #c00000;
+    }
+    .msg-rta {
+        min-height: 19px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,347 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+
+.navbar-title {
+    text-align: left !important;
+    font-family: 'RobotoCondensed';
+    text-transform: uppercase;
+    font-weight: normal;
+    h3 {
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+    p {
+        margin: 0;
+        font-size: 70%;
+        margin-bottom: 1rem;
+    }
+  }
+
+.black-title{
+    color:#2B2B2B;
+}
+
+ion-header {
+  .button-md {
+    box-shadow: none;
+  }
+
+  .toolbar-title {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+
+
+app-home {
+    ion-grid { padding: 0; }
+    font-family: 'RobotoCondensed';
+
+    .home-region-toggle { 
+        .segment-button {
+            color: #dedede;
+            border: none;
+            background: #595959 !important;
+            opacity: 1;
+            border-radius: 0 !important;
+            height: 3rem;
+            line-height: 3rem;
+        }
+        .segment-activated {
+            background: #2B2B2B !important;
+            color: #fff;
+        }
+    }
+
+    .error {
+        color: #a70000;
+        font-size: 150%;
+    }
+    
+    font-size: 85%;
+ 
+        ion-col {
+            padding: 5px 0;
+        }
+        .title {
+            text-transform: uppercase;
+        }
+        .title, .item-value {
+            font-size: 160%;
+            margin: 5px 0;
+        }
+        .item-value {
+            span {
+                border-right: 1px dotted #fff;
+            }
+            ion-icon.icon {
+                font-size: 1em;
+            }
+        }
+        
+        .item-value-box {
+            text-align: right;
+        }
+
+}
+    
+    .indicadores-provinciales {
+        background-color: #dcdcdc;
+    }
+
+// }
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.container-nacionales {
+    background-color: #dcdcdc;
+}
+
+.indicator-category {
+    padding: 0 10px;
+    h2 {
+        font-size: 100%;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 0;
+        margin-top: 16px;
+        margin-bottom: 9px;
+    }
+}
+
+.actividad-category {
+    background-color: #c00000;
+    color: #fff;
+}
+
+.costos-category {
+    background-color: #ed8260;
+    color: #fff;
+}
+
+.insumos-category {
+    background-color: #00b5cb;
+    color: #fff;
+}
+
+.permisos-category {
+    background-color: #f8ae57;
+    color: #fff;
+}
+
+.title-actividad {
+    color: #c00000 !important;
+    font-size: 85%;
+    margin: 5px 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+
+.province-actividad {
+    background-color: #c00000;
+    font-size: 20px;
+}
+
+.title-costos {
+    color: #ed8260;
+    font-size: 85%;
+    margin: 5px 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.province-costos {
+    background-color: #ed8260;
+}
+
+.title-insumos  {
+    color: #00b5cb;
+    font-size: 85%;
+    margin: 5px 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.province-insumos {
+    background-color: #00b5cb,
+}
+
+.title-permisos{
+    color: #f8ae57;
+    font-size: 85%;
+    margin: 5px 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.province-permisos {
+    background-color: #f8ae57;
+}
+
+.indicator-item {
+    color: #343434;
+    padding-top: 5px;
+    position: relative;
+    padding: 0 3px;
+    border-bottom: 1px solid #999999;
+
+    ion-col {
+            padding: 5px 0;
+        }
+        .title {
+            text-transform: uppercase;
+        }
+        .title, .item-value {
+            font-size: 85%;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .item-value {
+            span {
+                border-right: 1px dotted #fff;
+            }
+            ion-icon.icon {
+                font-size: 1em;
+            }
+        }
+        .description {                                 
+            font-size: 80%;
+            .source {
+                font-weight: bold;
+                margin: 3px 0;
+                span {
+                    font-weight: normal;
+                    font-family: 'RobotoCondensedLight';
+                    word-break: break-word;
+                }
+            }
+            .date {
+                font-weight: bold;
+                margin: 0;
+                white-space: nowrap;
+                span {
+                    text-transform: uppercase;
+                    font-weight:normal;
+
+                }
+            }
+        }
+        .item-value-box {
+            text-align: right;
+        }
+}
+
+.description {
+    .source {
+        margin: 3px 0;
+        font-size: 80%;
+        span {
+            font-weight: normal;
+            font-family: 'RobotoCondensedLight';
+            word-break: break-word;
+        }
+    }
+    .date {
+        margin: 0;
+        font-size: 80%;
+        span {
+            text-transform: uppercase;
+        }
+    }
+}
+.indicator-category, .province-category-title {
+    opacity: 0.75;
+}
+
+
+.province-category-title {
+    padding-left: 3px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 85%;
+    color: #fff;
+}
+.pi-0 {
+    border-top: 1px solid #fff;
+}
+.indicator-item {
+    padding-left: 15px;
+    .title {
+        color: #343434 !important;
+    }
+}
+
+.toggle-home{
+    background-color: #343434;
+    color: white;
+}
+
+.titulo-camarco {
+    font-size: 32px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .titulo-camarco {
+      font-size: 24px;
+    }
+  }
+
+  .logo-empresa {
+    text-align: right;
+  }
+
+  .imagen {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media only screen and (max-width: 575px) {
+    .align-items-center {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .imagen {
+      max-width: 300px;
+    }
+    .titulo-camarco{
+        white-space: nowrap;
+    }
+  }
+
+  .grid-background{
+    background-color: #f0f0f1;
+  }

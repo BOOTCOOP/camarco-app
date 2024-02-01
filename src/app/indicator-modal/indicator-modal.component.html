@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{indicator.name_code}}
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()"><ion-icon name="close-circle-outline" showWhen="android,windows,ios" size="large"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid >
+        <ion-row>
+            <ion-col>
+                <p><strong>{{indicator.name}}</strong></p>
+                <p><strong>Descripcion:</strong> {{indicator.description}}</p>
+                <p><strong>Fuente:</strong> {{indicator.source}}</p>
+                <p><strong>Fecha actualización:</strong> {{indicator.last_update | amDateFormat:'MMMM YYYY'}}</p>
+                <p><strong>Último dato disponible:</strong> {{indicator.last_date | amDateFormat:'MMMM YYYY'}}</p>
+                <p *ngIf="indicator.note">
+                    <strong>Nota:</strong> {{indicator.note}}
+                </p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

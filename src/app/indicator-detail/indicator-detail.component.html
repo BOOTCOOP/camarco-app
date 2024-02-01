@@ -1,0 +1,177 @@
+<ion-header>
+    <ion-toolbar ion-text color="{{navbarColor}}" >
+        <ion-buttons slot="start" class="title-color">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+      <ion-title class="title-color">{{indicator.name_code}} - {{indicator.province && indicator.province.name}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+  
+  <ion-content>
+    <ion-grid class="indicator-grid">
+        <div class="background-{{navbarColor}} indicator-detail-header">
+            <ng-container *ngIf="showSpecialTable"> 
+                  <ion-row>
+                        <ion-col width-100>
+                            <div id="date-trigger" class="indicator-date-selector" >Período: {{ update_date | amDateFormat:'MMMM YYYY'}} <ion-icon name="chevron-down-outline"></ion-icon>
+                            </div>
+                                <ion-popover trigger="date-trigger" triggerAction="click">
+                                    <ion-datetime 
+                                        locale="es-ES" 
+                                        [showDefaultButtons]="true" 
+                                        [(ngModel)]="update_date" 
+                                        *ngIf="datePicker" 
+                                        (ngModelChange)="filterByDate($event)" 
+                                        min={{minDate}}
+                                        presentation="month-year"
+                                        preferWheel = "true"
+                                        color="{{navbarColor}}"
+                                        doneText="Aceptar"
+                                        cancelText="Cancelar"
+                                        class="calendar-bg">
+                                     </ion-datetime>
+                                </ion-popover>
+                        </ion-col>
+                    </ion-row>
+                
+                    <ion-row *ngIf="showIndicatorDetails">
+                        <ion-col width-100>
+                            <p class="title-value">{{getValueFormatted(indicator.generalValue || '')}}</p>
+                            <p class="unit">{{indicator.unit}}</p>
+                        </ion-col>
+                    </ion-row>
+               
+                  <ion-row class="indicator-variaciones" *ngIf="showIndicatorDetails">
+                      <ion-col width-25 *ngIf="indicator.monthly">
+                          <p>{{indicator.monthly}}</p>
+                          <p class="title">Variación Mensual</p>
+                      </ion-col>
+                      <ion-col offset-10 width-25 *ngIf="indicator.interannual">
+                          <p>{{indicator.interannual}}</p>
+                          <p class="title">Variación Interanual</p>
+                      </ion-col>                
+                      <ion-col offset-10 width-25 *ngIf="indicator.accumulated">
+                          <p>{{indicator.accumulated}}</p>
+                          <p class="title">Variación Acumulada</p>
+                      </ion-col>
+                  </ion-row>
+            </ng-container>
+  
+            <ion-icon class="indicator-details-info" slot="rigth" (click)="informationAlert()" name="information-circle" size="large"></ion-icon>
+        </div>
+          
+          <!-- Escala Salarial -->
+          <div *ngIf="!showSpecialTable" class="white-background">
+              <br/>
+              <div *ngFor="let data of indicatorData" class="white-background"> 
+                  <ion-row>
+                      <ion-col width-100>
+                          <h2 class="{{navbarColor}}">{{data.extra_data[0].title}}</h2>
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <div class="table-salarios" *ngIf="data.extra_data.length > 0">
+                          <table class="detail-table">
+                              <thead class="title-table">
+                                  <tr>
+                                      <th colspan="1" rowspan="2" scope="colgroup">Categoría</th>
+                                      <th colspan="1" scope="colgroup">Zona A</th>
+                                      <th colspan="4" scope="colgroup">Zona B</th>
+                                      <th colspan="1" scope="colgroup">Zona C</th>
+                                      <th colspan="4" scope="colgroup">Zona C "Austral"</th>
+                                  </tr>
+                                  <tr>
+                                      <th scope="col">Salario Básico</th>
+                                      <th scope="col">Salario Básico</th>
+                                      <th scope="col">Adicional Zona Desfavorable</th>
+                                      <th scope="col">Total</th>
+                                      <th scope="col">Salario Básico</th>
+                                      <th scope="col">Adicional Zona Desfavorable</th>
+                                      <th scope="col">Total</th>
+                                      <th scope="col">Salario Básico</th>
+                                      <th scope="col">Adicional Zona Desfavorable</th>
+                                      <th scope="col">Total</th>
+                                  </tr>
+                                  </thead>
+                              <tbody>
+                                  <tr *ngFor="let dataNumbers of data.extra_data[0].data"> 
+                                      <td class="data fixed-col">{{dataNumbers.title}}</td> 
+                                      <td *ngFor="let value of dataNumbers.values">{{this.getValueFormatted(value) || '-'}}</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </ion-row>
+              </div>
+          </div>
+          <!-- Escala Salarial -->
+  
+          <ion-row *ngIf="showSpecialTable" class="white-background">
+              <ion-col width-100>
+                  <h2 class="{{navbarColor}}">Series anuales</h2>
+              </ion-col>
+          </ion-row>
+          <div *ngIf="showSpecialTable" class="white-background">            
+              <div class="table-wrapper">
+                  <table class="detail-table">
+                      <thead class="title-table">
+                          <tr class="extra-title">
+                              <th class="fixed-col"></th>
+                              <th *ngFor="let extraT of extraTitle" [attr.colspan]="extraT.qty">{{extraT.title}}
+                              </th>
+                          </tr>
+                          <tr> 
+                              <th class="fixed-col title-table">Fecha</th>
+                              <th *ngFor="let headTitleName of indicator.tableTitles"  class="title-table">{{headTitleName}}
+                              </th>
+                          </tr>
+                      </thead>
+                      
+                      <tbody>
+                          <tr *ngFor="let data of indicatorData">
+                              <td class="data fixed-col">{{data.value_date | amDateFormat:'MMM YY'}}</td>
+                              <td *ngFor="let extraData of data.table_data">{{getValueFormatted(extraData.value || '')}}</td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+  
+              <ion-row class="title-description">
+                  <ion-col width-100>
+                      <p *ngFor="let tdescr of titleDescription">
+                          {{tdescr}}
+                      </p>
+                  </ion-col>
+              </ion-row>
+  
+              <ion-row>
+                  <ion-col width-100>
+                      <h2 class="{{navbarColor}}">Gráficos</h2> 
+                  </ion-col>
+              </ion-row>
+  
+              <ion-segment color="dark" class="segment-text-color background-{{navbarColor}}" [(ngModel)]="chart">
+                  <ion-segment-button value="bar" class="segment-text-color">
+                  BARRAS
+                  </ion-segment-button>
+                  <ion-segment-button value="line" class="segment-text-color">
+                  CURVAS
+                  </ion-segment-button>
+              </ion-segment>
+                <div [ngSwitch]="chart">
+                  
+                  <app-bart-chart *ngSwitchCase="'bar'" [indicatorLabels]="chartLabels" [indicatorData]="chartData">
+                      Cargando gráfico...
+                  </app-bart-chart>
+                      
+                  <app-line-chart *ngSwitchCase="'line'" [indicatorLabels]="chartLabels" [indicatorData]="chartData">
+                      Cargando gráfico...
+                    </app-line-chart>
+                </div>
+  
+        </div>
+      
+  
+    </ion-grid>
+  
+</ion-content> 

@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid class="grid-background">
+      <ion-row class="align-items-center">
+        <ion-col size-md="6" class="text-md-right">
+          <h3 class="navbar-title ion-margin titulo-camarco black-title">
+            Indicadores Camarco
+          </h3>
+        </ion-col>
+        <ion-col size-md="6">
+          <div class="logo-empresa">
+            <ion-img src="../../assets/logo.png" alt="Logo de la empresa" class="imagen"></ion-img>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div class="navbar-title ion-margin">
+      <p class="actualizacion">Ultima Actualización: {{update_date | date:'dd/MM/YYYY'}}</p>
+    </div>
+  </ion-toolbar>
+  <ion-segment class="home-region-toggle" color="dark" [(ngModel)]="region">
+    <ion-segment-button value="nacionales" class="title-segment">
+    NACIONALES
+    </ion-segment-button>
+    <ion-segment-button value="provinciales" class="title-segment">
+    PROVINCIALES
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row  *ngIf="errorMessage">
+      <ion-col width-100>
+        <h1 class="error"><ion-icon name="alert"></ion-icon> {{errorMessage}}</h1>
+      </ion-col>
+    </ion-row>
+
+    <div [ngSwitch]="region">
+       <div *ngSwitchCase="'nacionales'" class="container-nacionales">
+        <div *ngFor="let category of categories">
+          <ion-row class="indicator-category {{category?.nameCode}}-category">
+            <h2>{{category.name}}</h2>
+          </ion-row>
+
+          <ion-row class="indicator-item item-nacional {{category.nameCode}}" *ngFor="let indicator of category.indicators" (click)="goToIndicator(indicator, category.nameCode)">
+            <ion-col width-66>
+              <p class="title-{{category.nameCode}} ">{{indicator.name_code}}</p>
+              <div class="description" *ngIf="indicator.data_indicator.data">
+                <p class="date">Último dato disponible: <span>{{indicator.data_indicator.data.value_date | amDateFormat:'MMM YYYY'}}</span></p>
+                <p class="source">Fuente: <span>{{indicator.source}}</span></p>
+              </div>
+            </ion-col>
+
+            <ion-col class="item-value-box" width-33>
+              <p class="item-value">
+                <span *ngIf="indicator.generalValue">{{getValueFormatted(indicator.generalValue)}}</span>
+                <ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline"></ion-icon>
+              </p>
+              <div class="description" *ngIf="(indicator.monthly || indicator.accumulated) && !indicator.useLogin">
+                <p *ngIf="indicator.monthly" class="source">Mensual: <span>{{indicator.monthly}}</span></p>
+                <p  *ngIf="indicator.accumulated" class="source">Anual: <span>{{indicator.accumulated}}</span></p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'provinciales'" class="indicadores-provinciales">
+        <div *ngFor="let provincial of provinciales">
+          <ion-row class="indicator-category {{provincial.nameCode}}-category">
+              <h2>{{provincial.name}}</h2>
+          </ion-row>
+
+          <div *ngFor="let indicator of provincial.indicators; let i = index">
+            <ion-row class="province-category-title province-{{provincial.nameCode}} pi-{{i}}" *ngIf="showProvinceIndicatorTitle(indicator.name_code)">
+              {{indicator.name_code}}
+            </ion-row>
+
+            <ion-row class="indicator-item {{provincial.nameCode}}" (click)="goToIndicator(indicator, provincial.nameCode)">
+              <ion-col width-66>
+                <p class="title-{{provincial.nameCode}}">{{indicator.province.name}}</p>
+                <div class="description" *ngIf="indicator.data_indicator.data">
+                  <p class="date">Último dato disponible: <span>{{indicator.data_indicator.data.value_date | amDateFormat:'MMM YYYY'}}</span></p>
+                  <p class="source">Fuente: <span>{{indicator.source}}</span></p>
+                </div>
+              </ion-col>
+
+              <ion-col class="item-value-box" width-33>
+                <p class="item-value">
+                  <span *ngIf="indicator.generalValue">{{getValueFormatted(indicator.generalValue)}}</span>
+                  <ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline"></ion-icon>
+                </p>
+                <div class="description" *ngIf="(indicator.monthly || indicator.accumulated) && !indicator.useLogin">
+                  <p *ngIf="indicator.monthly" class="source">Mensual: <span>{{indicator.monthly}}</span></p>
+                  <p  *ngIf="indicator.accumulated" class="source">Anual: <span>{{indicator.accumulated}}</span></p>
+                </div>
+              </ion-col>
+            </ion-row>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </ion-grid>
+
+</ion-content>

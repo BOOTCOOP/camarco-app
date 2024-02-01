@@ -1,0 +1,29 @@
+ <ion-header>
+  <ion-toolbar>
+    <ion-title>
+      LOGIN CAMARCO
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()"><ion-icon name="close-circle-outline" showWhen="android,windows,ios" size="large"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid class="login-modal">
+        <ion-row>
+            <ion-col>
+              <p class="title">Para ver este indicador necesita ingresar su usuario y contraseña de CAMARCO</p>
+              <form>
+                 <label>Usuario</label>
+                  <input type="text" [(ngModel)]="username" name="name" />
+                  <label>Contraseña</label>
+                  <input type="password" [(ngModel)]="pass" name="password" />
+                  <p class="msg-rta" [ngClass]="{'error' : error}">{{waiting ? 'Esperando respuesta...' : error}}</p>
+                  <ion-button class="btn-submit" [disabled]="waiting" (click)="loginUser()">{{waiting ? 'Procesando' : 'Ingresar'}}</ion-button>
+                  <ion-button (click)="dismiss()">Cancelar</ion-button>
+                </form>
+            </ion-col> 
+        </ion-row>
+    </ion-grid>
+</ion-content>

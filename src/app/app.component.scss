@@ -1,0 +1,90 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+
+
+@font-face {
+    font-family: 'RobotoCondensed';
+    src: url('../assets/fonts/roboto/RobotoCondensed-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoCondensedLight';
+    src: url('../assets/fonts/roboto/RobotoCondensed-Light.ttf');
+}
+
+@font-face {
+    font-family: 'RobotoCondensed-Bold';
+    src: url('../assets/fonts/roboto/RobotoCondensed-Bold.ttf');
+}
+
+body {
+    color: 	--ion-color-medium-contrast;
+}
+
+.background-actividad {
+    background-color: #c00000;
+}
+
+.background-costos {
+    background-color: #ed8260;
+}
+
+.background-insumos {
+    background-color: #00b5cb;
+}
+
+.background-permisos {
+    background-color:#f8ae57;
+}
+
+.toolbar {
+    font-family: 'RobotoCondensed';
+    background: #343434;
+}
+.toolbar-background-md {
+    background: #343434;
+}
+.toolbar {
+    .toolbar-title-md {
+        text-transform: uppercase;
+        color: white;
+    }
+}
+
+ion-col[width-70] {
+  -webkit-flex: 0 0 70%;
+  -ms-flex: 0 0 70%;
+  flex: 0 0 70%;
+  max-width: 70%;
+}
+
+ion-col[width-30] {
+  -webkit-flex: 0 0 30%;
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+ion-modal {
+    padding: 30px;
+    background: rgba(0,0,0,0.5);
+    .close-button {
+        color: white;
+    }
+}

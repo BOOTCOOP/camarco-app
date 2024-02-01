@@ -1,0 +1,13 @@
+<div style="display: block; min-height: 350px !important">
+    <p *ngFor="let data of indicatorData"> {{data}}</p>
+    <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          colors="colors"
+          chartType="barChartType"
+          >
+    </canvas>
+</div>
+
