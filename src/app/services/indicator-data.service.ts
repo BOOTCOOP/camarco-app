@@ -13,8 +13,9 @@ export class IndicatorDataService {
 
   constructor(public http: HttpClient) {
    
-    // this.url = 'https://indicadores.camarco.org.ar/';
-    this.url = 'http://localhost:8000/';
+    this.url = 'https://indicadores.camarco.org.ar/';
+    // this.url = 'http://localhost:8000/';
+    // this.url = 'https://t2bf1hwv-8000.brs.devtunnels.ms/'
 
     this.webToken = "781329f3f61df183dbf81fcd38f524117a52181d";
     // this.webToken = "4af0a610241f06a7076f84fe88bd34296a63694c"
@@ -34,10 +35,11 @@ export class IndicatorDataService {
   }
 
   getUploadData():Observable<Object>{
-    let headers: HttpHeaders = new HttpHeaders({ 'Authorization': 'Token ' + this.webToken});
+    let headers: HttpHeaders = new HttpHeaders({ 'Authorization': 'Token ' + this.webToken, 'Content-Type': 'application/json'});
     console.log(headers);
     
     return this.http.get(this.url + 'upload-data/?format=json', { headers: headers })
+    // return this.http.get(this.url + 'upload-data/?format=json')
     .pipe(tap((response:any) => {
       if (response){
         return response.date
@@ -47,7 +49,8 @@ export class IndicatorDataService {
   )}
 
   getIndicators(token:any, provinciales:boolean):Observable<Object>{
-    let headers: HttpHeaders = new HttpHeaders({ 'Authorization': 'Token ' + token});
+    let headers: HttpHeaders = new HttpHeaders({ 'Authorization': 'Token ' + token, 'Content-Type': 'application/json'});
+    console.log(headers);
     return this.http.get(this.url + 'indices/?format=json&provinciales=' + provinciales, { headers: headers })
     .pipe(map((data: any) => {
       let newData = this.processData(data)
