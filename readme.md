@@ -207,44 +207,7 @@ Para más detalles, consulta el archivo package.json.
                 └── bart-chart.component.html
                 └── ...
             └── 📁home
-                └── home-routing.module.ts
-                └── home.module.ts
-                └── home.page.html
-                └── home.page.scss
-                └── home.page.spec.ts
-                └── home.page.ts
-            └── 📁indicator-detail
-                └── indicator-detail-routing.module.ts
-                └── indicator-detail.component.html
-                └── indicator-detail.component.scss
-                └── indicator-detail.component.spec.ts
-                └── indicator-detail.component.ts
-                └── indicator-detail.module.ts
-            └── 📁indicator-modal
-                └── indicator-modal.component.html
-                └── indicator-modal.component.scss
-                └── indicator-modal.component.spec.ts
-                └── indicator-modal.component.ts
-            └── 📁line-chart
-                └── line-chart.component.html
-                └── line-chart.component.scss
-                └── line-chart.component.spec.ts
-                └── line-chart.component.ts
-            └── 📁login-modal
-                └── login-modal.component.html
-                └── login-modal.component.scss
-                └── login-modal.component.spec.ts
-                └── login-modal.component.ts
-            └── 📁services
-                └── auth.service.spec.ts
-                └── auth.service.ts
-                └── indicator-data.service.spec.ts
-                └── indicator-data.service.ts
-            └── 📁tabs
-                └── tabs.component.html
-                └── tabs.component.scss
-                └── tabs.component.spec.ts
-                └── tabs.component.ts
+            └── ...
         └── 📁assets
             └── 📁fonts
                 └── 📁roboto
