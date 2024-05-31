@@ -12,15 +12,14 @@
 - ### <u>[Dependencias](#Dependencias)</u>
 - ### <u>[Estructura del Proyecto](#EstructuradelProyecto)</u>
 - ### <u>[Autor](#Autor)</u>
-- ### <u>[Licencia](#Licencia)</u>
+- ### <u>[Integrantes](#Integrantes)</u>
 
-## Descripción
+## <a id="Descripción">Descripción</a><br>
 
 Indicadores Camarco es una aplicación móvil desarrollada con Ionic y Angular que proporciona una interfaz para visualizar diferentes indicadores económicos y financieros. La aplicación está diseñada para ofrecer una experiencia de usuario intuitiva y accesible tanto en dispositivos Android como iOS.
 
 
-
-## Instalación
+## <a id="Instalación">Instalación</a><br>
 
 Para instalar y ejecutar este proyecto, necesitas tener instalado Node.js y npm (Node Package Manager). Luego, sigue estos pasos:
 
@@ -34,8 +33,7 @@ Para instalar y ejecutar este proyecto, necesitas tener instalado Node.js y npm 
     ```sh
     npm install
     ```
-
-## Ejecución del Proyecto
+## <a id="EjecucióndelProyecto">Ejecución del Proyecto</a><br>
 
 Para ejecutar la aplicación en un servidor local, utiliza el siguiente comando:
 ```sh
@@ -43,20 +41,22 @@ npm start
 ```
 Esto iniciará el servidor de desarrollo y podrás acceder a la aplicación en http://localhost:4200/.
 
-## Construcción
+## <a id="Construcción">Construcción</a><br>
+
 Para construir la aplicación para producción, utiliza:
 ```sh
 npm run build
 ```
 Los archivos de la aplicación se generarán en el directorio dist/
 
-## Tests
+## <a id="Tests">Tests</a><br>
 Para ejecutar las pruebas unitarias, utiliza:
 ```sh
 npm test
 ```
 
-## Dependencias
+## <a id="Dependencias">Dependencias</a><br>
+
 El proyecto utiliza las siguientes dependencias:
 
 - **@capacitor/core "^4.0.0"**
@@ -70,7 +70,8 @@ El proyecto utiliza las siguientes dependencias:
 
 Para más detalles, consulta el archivo package.json.
 
-## Estructura del Proyecto
+## <a id="EstructuradelProyecto">Estructura del Proyecto</a><br>
+
 ```
 └── 📁camarco-app
     └── .browserslistrc
@@ -435,13 +436,11 @@ Para más detalles, consulta el archivo package.json.
     └── tsconfig.spec.json
 ```
 
-## Autor
+## <a id="Autor">Autor</a><br>
+
 Este proyecto lo mantiene **Boot Coop**, *Cooperativa de Software*.
 
-## Integrantes
+## <a id="Integrantes">Integrantes</a><br>
 
 - [@VarelaCristianFacundo](https://www.github.com/VarelaCristianFacundo)
 - [@MiguelMaidana](https://www.github.com/MiguelMaidana)
-
-
-## <a id="Tests">Tests</a><br>
